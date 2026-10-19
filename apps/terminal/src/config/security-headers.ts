@@ -10,6 +10,7 @@ export const cspDirectives: Record<string, string> = {
 	"script-src": "'self' blob: 'unsafe-inline'",
 	"connect-src": [
 		"'self'",
+		"https://app.hyperliquid.xyz",
 		"https://api.hyperliquid.xyz",
 		"https://api.hyperliquid-testnet.xyz",
 		"wss://api.hyperliquid.xyz",
