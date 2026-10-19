@@ -32,6 +32,7 @@ function PopoverContent({
 	sideOffset = POPOVER_DEFAULT_SIDE_OFFSET,
 	alignOffset = 0,
 	collisionPadding = POPOVER_DEFAULT_COLLISION_PADDING,
+	collisionAvoidance,
 	keepMounted = false,
 	...props
 }: React.ComponentProps<typeof PopoverPrimitive.Popup> & {
@@ -39,6 +40,7 @@ function PopoverContent({
 	sideOffset?: number;
 	alignOffset?: number;
 	collisionPadding?: number;
+	collisionAvoidance?: React.ComponentProps<typeof PopoverPrimitive.Positioner>["collisionAvoidance"];
 	keepMounted?: boolean;
 }) {
 	return (
@@ -48,6 +50,7 @@ function PopoverContent({
 				sideOffset={sideOffset}
 				alignOffset={alignOffset}
 				collisionPadding={collisionPadding}
+				collisionAvoidance={collisionAvoidance}
 				className="z-50"
 			>
 				<PopoverPrimitive.Popup

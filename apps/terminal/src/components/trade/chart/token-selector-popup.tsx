@@ -103,6 +103,7 @@ export function TokenSelectorPopup({
 			sideOffset={4}
 			alignOffset={-2}
 			collisionPadding={8}
+			collisionAvoidance={{ fallbackAxisSide: "none" }}
 			aria-labelledby={headingId}
 			onKeyDown={handleKeyDown}
 			keepMounted
