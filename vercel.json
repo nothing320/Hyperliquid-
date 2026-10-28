@@ -1,6 +1,6 @@
 {
 	"$schema": "https://openapi.vercel.sh/vercel.json",
-	"buildCommand": "NITRO_PRESET=vercel pnpm build && cp -r apps/terminal/.vercel/output .vercel/",
+	"buildCommand": "NODE_OPTIONS=--max-old-space-size=6144 NITRO_PRESET=vercel pnpm build && cp -r apps/terminal/.vercel/output .vercel/",
 	"installCommand": "pnpm install",
 	"framework": null,
 	"ignoreCommand": "git diff --quiet HEAD^ HEAD -- . ':(exclude)apps/website'"
