@@ -1,8 +1,6 @@
 {
-	"$schema": "https://openapi.vercel.sh/vercel.json",
-	"buildCommand": "NODE_OPTIONS=--max-old-space-size=6144 NITRO_PRESET=vercel pnpm build",
-	"outputDirectory": "apps/terminal/.output/public",
-	"installCommand": "pnpm install",
-	"framework": null,
-	"ignoreCommand": "git diff --quiet HEAD^ HEAD -- . ':(exclude)apps/website'"
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "buildCommand": "NODE_OPTIONS=--max-old-space-size=6144 NITRO_PRESET=vercel pnpm build",
+  "installCommand": "pnpm install",
+  "framework": "tanstack-start"
 }
