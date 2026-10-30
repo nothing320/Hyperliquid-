@@ -2,5 +2,5 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "buildCommand": "NODE_OPTIONS=--max-old-space-size=6144 NITRO_PRESET=vercel pnpm build",
   "installCommand": "pnpm install",
-  "framework": "tanstack-start"
+  "framework": "nitro"
 }
