@@ -1,12 +1,10 @@
 import tailwindcss from '@tailwindcss/vite'
 import { tanstackStart } from '@tanstack/react-start/plugin/vite'
 import viteReact from '@vitejs/plugin-react'
-import { nitro } from 'nitro/vite'
 import { defineConfig, type PluginOption } from 'vite'
 import viteTsConfigPaths from 'vite-tsconfig-paths'
 import { lingui } from '@lingui/vite-plugin'
 import { visualizer } from 'rollup-plugin-visualizer'
-import { securityHeaders } from './src/config/security-headers'
 
 const isAnalyze = process.env.ANALYZE === 'true'
 
@@ -49,26 +47,12 @@ const config = defineConfig({
     },
   },
   plugins: [
-    nitro({
-      compressPublicAssets: true,
-      routeRules: {
-        '/**': {
-          headers: securityHeaders,
-        },
-        '/assets/**': {
-          headers: { ...securityHeaders, 'cache-control': 'public, max-age=31536000, immutable' },
-        },
-        '/charting_library/**': {
-          headers: { ...securityHeaders, 'cache-control': 'public, max-age=31536000, immutable' },
-        },
-      },
-    }),
     lingui(),
     viteTsConfigPaths({
       projects: ['./tsconfig.json'],
     }),
     tailwindcss(),
-    tanstackStart(),
+    tanstackStart({ spa: { enabled: true } }),
     viteReact({
       babel: {
         plugins: ['@lingui/babel-plugin-lingui-macro', 'babel-plugin-react-compiler'],
