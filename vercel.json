@@ -1,6 +1,5 @@
 {
-  "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "NODE_OPTIONS=--max-old-space-size=6144 NITRO_PRESET=vercel pnpm build",
+  "framework": null,
   "installCommand": "pnpm install",
-  "framework": "nitro"
+  "buildCommand": "mkdir -p .vercel && NITRO_PRESET=vercel pnpm build && rm -rf .vercel/output && cp -r apps/terminal/.vercel/output .vercel/output"
 }
